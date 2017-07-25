@@ -95,4 +95,4 @@ export DISPLAY=:0.0 xmgrace
 export PKG_CONFIG_PATH=/usr/local/opt/icu4c/lib/pkgconfig
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/Users/kenhu/bin:$PATH"
-alias config='/usr/local/bin/git --git-dir=/Users/kenhu/.cfg/ --work-tree=/Users/kenhu'
+alias config='$(which git) --git-dir=/Users/kenhu/.cfg/ --work-tree=/Users/kenhu'
