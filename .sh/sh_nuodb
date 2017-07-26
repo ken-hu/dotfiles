@@ -1,0 +1,31 @@
+# PATH
+PATH=$THIRDPARTY_DIR/bin:$PATH
+PATH=$THIRDPARTY_DIR/$nuoarch/bin:$PATH
+PATH=$HOME/bin:$PATH
+
+# ENV
+export HOME=/Users/kenhu
+export nuoarch=x86_64-darwin
+export NUODB_HOME=$HOME/work/nuodb/dist
+export THIRDPARTY_DIR=$HOME/work/nuo3rdparty
+
+export TESTS=$HOME/nuodbtests/sqllogic/test
+export DYLD_LIBRARY_PATH=$NUODB_HOME/lib64/
+export BINARY=$HOME/work/PortSLT/src
+export ODBCINI=$HOME/work/odbc.ini
+
+export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# alias
+alias n='cd ~/work/nuodb'
+alias dv='cd ~/work/dev'
+alias nv='cd ~/work/linux'
+alias sql='./dist/bin/nuosql test@localhost --user dba --password dba'
+alias sqlt='./dist/bin/nuosql test@localhost --user dba --password dba --timer full'
+alias bcfg='./build/bld cfg -G "Unix Makefiles" -b Debug'
+alias bcfgr='./build/bld cfg -G "Unix Makefiles" -b RelWithDebInfo'
+alias bc='./build/bld cpp'
+alias bn='./build/bld cpp --target nuodb'
+alias bsql='./build/bld cpp --target nuosql'
+alias b='./build/bld'
+

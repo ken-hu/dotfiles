@@ -1,0 +1,13 @@
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+ulimit -c unlimited
+
+# This generates compile_commands.json, needed by rtags.
+export CMAKE_EXTRA='-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+
+# Git
+export GIT_EDITOR=vi
+
+# rtags
+PATH=$HOME/local/rtags/bin:$PATH
+export PATH
