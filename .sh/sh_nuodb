@@ -1,10 +1,4 @@
-# PATH
-PATH=$THIRDPARTY_DIR/bin:$PATH
-PATH=$THIRDPARTY_DIR/$nuoarch/bin:$PATH
-PATH=$HOME/bin:$PATH
-
 # ENV
-export HOME=/Users/kenhu
 export nuoarch=x86_64-darwin
 export NUODB_HOME=$HOME/work/nuodb/dist
 export THIRDPARTY_DIR=$HOME/work/nuo3rdparty
@@ -15,6 +9,10 @@ export BINARY=$HOME/work/PortSLT/src
 export ODBCINI=$HOME/work/odbc.ini
 
 export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# PATH
+PATH=$THIRDPARTY_DIR/bin:$PATH
+PATH=$THIRDPARTY_DIR/$nuoarch/bin:$PATH
 
 # alias
 alias n='cd ~/work/nuodb'

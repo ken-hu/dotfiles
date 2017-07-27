@@ -9,5 +9,6 @@ export CMAKE_EXTRA='-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 export GIT_EDITOR=vi
 
 # rtags
-PATH=$HOME/local/rtags/bin:$PATH
-export PATH
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="$HOME/local/rtags/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
