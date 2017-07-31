@@ -1,5 +1,4 @@
 # ENV
-export nuoarch=x86_64-darwin
 export NUODB_HOME=$HOME/work/nuodb/dist
 export THIRDPARTY_DIR=$HOME/work/nuo3rdparty
 

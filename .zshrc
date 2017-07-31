@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 
 # autojump
 plugins=(git autojump)
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[[ -x "$(which brew)" ]] && [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # Source config
 [ -f "$HOME"/.sh/sh_env ] && . "$HOME"/.sh/sh_env
