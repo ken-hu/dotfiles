@@ -16,6 +16,7 @@ PATH=$THIRDPARTY_DIR/$nuoarch/bin:$PATH
 # alias
 alias n='cd ~/work/nuodb'
 alias dv='cd ~/work/dev'
+alias te='cd ~/work/test'
 alias nv='cd ~/work/linux'
 alias sql='./dist/bin/nuosql test@localhost --user dba --password dba'
 alias sqlt='./dist/bin/nuosql test@localhost --user dba --password dba --timer full'
