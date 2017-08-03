@@ -1,11 +1,12 @@
 # ENV
-export NUODB_HOME=$HOME/work/nuodb/dist
-export THIRDPARTY_DIR=$HOME/work/nuo3rdparty
+export WSPACE=$HOME/work
+export NUODB_HOME=$WSPACE/nuodb/dist
+export THIRDPARTY_DIR=$WSPACE/nuo3rdparty
 
 export TESTS=$HOME/nuodbtests/sqllogic/test
 export DYLD_LIBRARY_PATH=$NUODB_HOME/lib64/
-export BINARY=$HOME/work/PortSLT/src
-export ODBCINI=$HOME/work/odbc.ini
+export BINARY=$WSPACE/PortSLT/src
+export ODBCINI=$WSPACE/odbc.ini
 
 export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_PATH"
 
@@ -14,10 +15,10 @@ PATH=$THIRDPARTY_DIR/bin:$PATH
 PATH=$THIRDPARTY_DIR/$nuoarch/bin:$PATH
 
 # alias
-alias n='cd ~/work/nuodb'
-alias dv='cd ~/work/dev'
-alias te='cd ~/work/test'
-alias nv='cd ~/work/linux'
+alias n='cd $WSPACE/nuodb'
+alias dv='cd $WSPACE/dev'
+alias te='cd $WSPACE/test'
+alias s='nstart'
 alias sql='./dist/bin/nuosql test@localhost --user dba --password dba'
 alias sqlt='./dist/bin/nuosql test@localhost --user dba --password dba --timer full'
 alias bcfg='./build/bld cfg -G "Unix Makefiles" -b Debug'
@@ -27,3 +28,11 @@ alias bn='./build/bld cpp --target nuodb'
 alias bsql='./build/bld cpp --target nuosql'
 alias b='./build/bld'
 
+__cdhooks_update_env() {
+    builtin "$@"
+    if [ $(dirname $PWD) = $WSPACE ]; then
+      export NUODB_HOME=$PWD/dist
+      echo "NUODB_HOME is now $NUODB_HOME"
+    fi
+}
+alias cd='__cdhooks_update_env cd'
