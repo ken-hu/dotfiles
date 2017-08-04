@@ -11,8 +11,8 @@ export ODBCINI=$WSPACE/odbc.ini
 export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # PATH
-PATH=$THIRDPARTY_DIR/bin:$PATH
-PATH=$THIRDPARTY_DIR/$nuoarch/bin:$PATH
+PATH=$THIRDPARTY_DIR/common/bin:$PATH
+PATH=$THIRDPARTY_DIR/$(nuoarch)/bin:$PATH
 
 # alias
 alias n='cd $WSPACE/nuodb'
