@@ -8,7 +8,7 @@ export HOME_BIN=$HOME/bin
 export CMAKE_EXTRA='-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 
 # Git
-export GIT_EDITOR=vi
+export GIT_EDITOR=vim
 
 # rtags
 export PATH="$PATH:/usr/local/opt/llvm/bin"
