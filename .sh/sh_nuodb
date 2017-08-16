@@ -2,6 +2,7 @@
 export WSPACE=$HOME/work
 export NUODB_HOME=$WSPACE/nuodb/dist
 export THIRDPARTY_DIR=$WSPACE/nuo3rdparty
+export USE_CCACHE=true
 
 export TESTS=$HOME/nuodbtests/sqllogic/test
 export DYLD_LIBRARY_PATH=$NUODB_HOME/lib64/
@@ -12,7 +13,7 @@ export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_P
 
 # PATH
 [[ -d "$THIRDPARTY_DIR" ]] && PATH=$THIRDPARTY_DIR/common/bin:$PATH
-[[ -x "$(type nuoarch)" ]] && PATH=$THIRDPARTY_DIR/$(nuoarch)/bin:$PATH
+[[ -x "$(which nuoarch)" ]] && PATH=$THIRDPARTY_DIR/$(nuoarch)/bin:$PATH
 
 # alias
 alias n='cd $WSPACE/nuodb'

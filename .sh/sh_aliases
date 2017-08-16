@@ -8,7 +8,6 @@ alias diff="diff -u"
 alias hosts="cat /etc/hosts | grep -i"
 alias passwds="cat /etc/passwd | grep -i"
 alias h=history
-alias gdb='gdb -q'
 
 # Generic search function
 find_it () {
