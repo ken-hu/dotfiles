@@ -50,7 +50,6 @@ def refactorComments(file):
     # \*/, match '*/'    
     pattern = "/\*(.*?)\*/"
     matched = re.findall(pattern, file_string, re.DOTALL)
-    i = 0
     for match in matched:
         # Extract corresponding section and add to subst
         isFileHeader = re.search("Filename:\s\s(.*?)\n", match)
