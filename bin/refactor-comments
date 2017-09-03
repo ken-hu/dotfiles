@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+import glob, re, os, sys
+
+'''
+Update the section
+/*
+ * =====================================================================================
+ *
+ *       Filename:  filename.cc
+ *
+ *    Description:  the file description 
+ *        Created:  06/11/2016 15:33:49
+ *
+ *         Author:  Ken Hu, xnchnhu@gmail.com
+ *
+ * =====================================================================================
+ */
+ <code>
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  theFunctionName
+ *  Description:  the description for the function
+ * =====================================================================================
+ */
+ <code>
+ To doxygen comment format
+/**
+ * @file
+ * Brief the file description
+ */
+ <code>
+ /**
+ * the description for the function
+ * @param FILL-ME-IN
+ * @return FILL-ME-IN
+ */
+ <code>
+ '''
+def refactorComments(file):
+    print ("Refactoring", file)
+    
+    # Read the file to a string
+    file_handle = open(file, 'r')
+    file_string = file_handle.read()
+    file_handle.close()
+    
+    # Update the file string
+    # /\*, match '/*'
+    # .*?, match everything non-greedy
+    # \*/, match '*/'    
+    pattern = "/\*(.*?)\*/"
+    matched = re.findall(pattern, file_string, re.DOTALL)
+    i = 0
+    for match in matched:
+        # Extract corresponding section and add to subst
+        isFileHeader = re.search("Filename:\s\s(.*?)\n", match)
+        isFunctionHeader = re.search("Name:\s\s(.*?)\n", match)
+        description = re.search("Description:\s\s(.*?)\n", match)
+        if isFileHeader and description:
+            fileDescription = description.group(1) 
+            substFileHeader = "/**\n * @file\n * Brief " + fileDescription + "\n */"
+            # /\*, match '/*'
+            # [^/]*, match everything except '/' many times
+            # .*?, match everything non-greedy
+            # \*/, match '*/'
+            pattern = "/\*[^/]*" + isFileHeader.group() + ".*?\*/"
+            file_string = (re.sub(pattern, substFileHeader, file_string, 0, re.DOTALL))
+        if isFunctionHeader and description:
+            functionDescription = description.group(1)
+            substFunctionHeader = "/**\n * " + functionDescription + "\n * @param FILL-ME-IN\n * @return FILL-ME-IN\n */"
+            pattern = "/\*[^/]*" + isFunctionHeader.group() + ".*?\*/" # error-prone when having overloading functions
+            patternMatched = re.search(pattern, file_string, re.DOTALL);
+            file_string = (re.sub(pattern, substFunctionHeader, file_string, 0, re.DOTALL))
+    
+    # Write new file string to the file.
+    # Using mode 'w' to truncate.
+    file_handle = open(file, 'w')
+    file_handle.write(file_string)
+    file_handle.close()
+
+fileTypes = ('*/src/*.cc', '*/include/*.h')
+filelist = []
+for type in fileTypes:
+    filelist.extend(glob.glob(type))
+filelist.sort()
+for file in filelist:
+    refactorComments(file)
+
