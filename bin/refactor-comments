@@ -56,8 +56,9 @@ def refactorComments(file):
         isFunctionHeader = re.search("Name:\s\s(.*?)\n", match)
         description = re.search("Description:\s\s(.*?)\n", match)
         if isFileHeader and description:
+            fileName = isFileHeader.group(1);
             fileDescription = description.group(1) 
-            substFileHeader = "/**\n * @file\n * Brief " + fileDescription + "\n */"
+            substFileHeader = "/**\n * @file " + fileName + "\n * @brief " + fileDescription + "\n * @author Ken Hu, xnchnhu@gmail.com\n */"
             # /\*, match '/*'
             # [^/]*, match everything except '/' many times
             # .*?, match everything non-greedy
@@ -66,7 +67,7 @@ def refactorComments(file):
             file_string = (re.sub(pattern, substFileHeader, file_string, 0, re.DOTALL))
         if isFunctionHeader and description:
             functionDescription = description.group(1)
-            substFunctionHeader = "/**\n * " + functionDescription + "\n * @param FILL-ME-IN\n * @return FILL-ME-IN\n */"
+            substFunctionHeader = "/**\n * @brief " + functionDescription + "\n * @param FILL-ME-IN\n * @return FILL-ME-IN\n */"
             pattern = "/\*[^/]*" + isFunctionHeader.group() + ".*?\*/" # error-prone when having overloading functions
             patternMatched = re.search(pattern, file_string, re.DOTALL);
             file_string = (re.sub(pattern, substFunctionHeader, file_string, 0, re.DOTALL))
