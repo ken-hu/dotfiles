@@ -17,8 +17,6 @@ export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_P
 
 # alias
 alias n='cd $WSPACE/nuodb'
-alias dv='cd $WSPACE/dev'
-alias te='cd $WSPACE/test'
 alias s='nstart'
 alias sql='./dist/bin/nuosql test@localhost --user dba --password dba'
 alias sqlt='./dist/bin/nuosql test@localhost --user dba --password dba --timer full'
@@ -31,9 +29,15 @@ alias b='./build/bld'
 
 __cdhooks_update_env() {
     builtin "$@"
-    if [ $(dirname $PWD) = $WSPACE ]; then
+    if [ $(dirname $PWD) = $WSPACE ] && [ -d $PWD/dist ]; then
       export NUODB_HOME=$PWD/dist
       echo "NUODB_HOME is now $NUODB_HOME"
     fi
 }
+
+__cdhooks_worktree() {
+    __cdhooks_update_env cd $WSPACE/$1
+}
+
 alias cd='__cdhooks_update_env cd'
+alias cdwt='__cdhooks_worktree'
