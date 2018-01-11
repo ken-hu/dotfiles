@@ -17,15 +17,21 @@ export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_P
 
 # alias
 alias n='cd $WSPACE/nuodb'
-alias s='nstart'
-alias sql='./dist/bin/nuosql test@localhost --user dba --password dba'
-alias sqlt='./dist/bin/nuosql test@localhost --user dba --password dba --timer full'
+alias k='nps -k'
 alias bcfg='./build/bld cfg -G "Unix Makefiles" -b Debug'
 alias bcfgr='./build/bld cfg -G "Unix Makefiles" -b RelWithDebInfo'
 alias bc='./build/bld cpp'
 alias bn='./build/bld cpp --target nuodb'
 alias bsql='./build/bld cpp --target nuosql'
 alias b='./build/bld'
+alias bbc='./build/bld bamboo --create -u khu'
+alias bbs='./build/bld bamboo --start -u khu'
+
+alias s='nstart'
+alias sql='s sql'
+alias sqlt='s sql --timer full'
+alias m='s mgr'
+alias mc='s mgrc'
 
 __cdhooks_update_env() {
     builtin "$@"

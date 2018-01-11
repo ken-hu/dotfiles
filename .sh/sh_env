@@ -19,3 +19,5 @@ export PATH="$HOME_BIN:$PATH"
 export GOROOT="$HOME_BIN/go"
 export GOPATH="$HOM_BIN"
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+export PATH="$HOME/local/bin:$PATH"
