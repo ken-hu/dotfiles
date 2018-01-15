@@ -32,6 +32,8 @@ alias sql='s sql'
 alias sqlt='s sql --timer full'
 alias m='s mgr'
 alias mc='s mgrc'
+alias nuochk='./dist/bin/nuochk'
+alias nuodb='./dist/bin/nuodb'
 
 __cdhooks_update_env() {
     builtin "$@"
