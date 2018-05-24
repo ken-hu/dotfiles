@@ -34,6 +34,8 @@ alias m='s mgr'
 alias mc='s mgrc'
 alias nuochk='./dist/bin/nuochk'
 alias nuodb='./dist/bin/nuodb'
+alias exp3party='export THIRDPARTY_DIR=$WSPACE/nuo3rdparty && echo $THIRDPARTY_DIR'
+alias exp3partyrel='export THIRDPARTY_DIR=$WSPACE/nuo3rdpartyrel && echo $THIRDPARTY_DIR'
 
 __cdhooks_update_env() {
     builtin "$@"
@@ -48,4 +50,4 @@ __cdhooks_worktree() {
 }
 
 alias cd='__cdhooks_update_env cd'
-alias cdwt='__cdhooks_worktree'
+alias wd='__cdhooks_worktree'
