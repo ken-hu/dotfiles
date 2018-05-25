@@ -1,6 +1,14 @@
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 local host_status="%{$fg[white]%}%n@%m"
-PROMPT='${host_status}:%{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
+
+case `uname` in
+    Darwin)
+        PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
+    ;;
+    Linux)
+        PROMPT='${host_status}:%{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
+    ;;
+esac
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
