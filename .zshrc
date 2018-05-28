@@ -22,3 +22,14 @@ done
 
 # alias for dotfiles
 alias got='$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# You will need to
+# 1) Disselect options for Windows and Tabs
+# 2) Set Profiles>Terminal>Terminal may set tab/window title
+DISABLE_AUTO_TITLE="true"
+precmd () {
+    # Display the relative path as the iTerm2 tab title
+    tab_label=${PWD/${HOME}/\~}
+    echo -ne "\e]2;${tab_label}\a"
+    echo -ne "\e]1;${tab_label: -24}\a"
+}
