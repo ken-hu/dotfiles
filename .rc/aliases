@@ -8,33 +8,7 @@ alias diff="diff -u"
 alias hosts="cat /etc/hosts | grep -i"
 alias passwds="cat /etc/passwd | grep -i"
 alias h=history
-
-# Generic search function
-find_it () {
-    local re=$1
-    shift
-    local dir=.
-    if [ -d "$1" ]; then
-        dir=$1
-        echo "Searching directory $dir ..." 1>&2
-        shift
-    fi
-    find "$dir" \( -name blib -o -name .git -prune \) \
-             -o \( -type f ${re:+ -regex "$re"} -print0 \) \
-      | xargs -0 grep "$@"
-}
-
-# Searching for stuff
-alias findf='find_it ""'
-alias findch='find_it ".*\.\([ch]\(pp\|xx\)?\|cc\|hh\)"'
-alias findc='find_it ".*\.c\(c\|pp\|xx\)?"'
-alias findh='find_it ".*\.h\(h\|pp\|xx\)?"'
-alias findj='find_it ".*\.java"'
-alias findp='find_it ".*\.p[lm]"'
-alias findpy='find_it ".*\.py"'
-
-# Needs to be fancy :-/
-alias findcm='( ls -1 CMake/*.cmake 2>/dev/null; find . \( -name .git -prune \) -o \( -type f -name CMakeLists.txt -print \); ) | xargs grep'
+alias ag="ag --color-match '1;32' --color-line-number ''"
 
 # Other
 alias mpic++='/usr/local/bin/mpic++'
