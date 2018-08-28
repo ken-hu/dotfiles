@@ -8,7 +8,7 @@ alias diff="diff -u"
 alias hosts="cat /etc/hosts | grep -i"
 alias passwds="cat /etc/passwd | grep -i"
 alias h=history
-alias ag="ag --color-match '1;32' --color-line-number ''"
+alias ag="ag --color-path '35' --color-match '1;32' --color-line-number ''"
 
 # Other
 alias mpic++='/usr/local/bin/mpic++'
