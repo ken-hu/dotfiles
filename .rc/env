@@ -20,4 +20,10 @@ export GOROOT="$HOME_BIN/go"
 export GOPATH="$HOM_BIN"
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
+# OpenSSL
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
 export PATH="$HOME/local/bin:$PATH"
+
+# To use a local clang
+export PATH="/usr/local/opt/llvm/bin:$PATH"

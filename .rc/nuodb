@@ -17,6 +17,7 @@ export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_P
 
 # alias
 alias n='cd $WSPACE/nuodb'
+alias n2='cd $WSPACE/nuodb2'
 alias k='nps -k'
 alias bcfg='./build/bld cfg -G "Unix Makefiles" -b Debug'
 alias bcfgr='./build/bld cfg -G "Unix Makefiles" -b RelWithDebInfo'
@@ -36,6 +37,8 @@ alias mc='s mgrc'
 alias nuochk='./dist/bin/nuochk'
 alias nuoarchive='./dist/bin/nuoarchive'
 alias nuodb='./dist/bin/nuodb'
+alias nuoadmin='./dist/etc/nuoadmin'
+alias nuocmd='./dist/bin/nuocmd --client-key dist/var/etc/nuocmd.pem --verify-server dist/var/etc/nuoadmin.cert'
 alias exp3party='export THIRDPARTY_DIR=$WSPACE/nuo3rdparty && echo $THIRDPARTY_DIR'
 alias exp3partyrel='export THIRDPARTY_DIR=$WSPACE/nuo3rdpartyrel && echo $THIRDPARTY_DIR'
 
