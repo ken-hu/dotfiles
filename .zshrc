@@ -14,9 +14,9 @@ source $ZSHRC/my.zsh_theme
 autoload -U compinit && compinit
 
 # Source config
-[ -f $ZSHRC/env ] && . $ZSHRC/env
+[ -f $ZSHRC/setup ] && . $ZSHRC/setup
 
-for rc in aliases nuodb; do
+for rc in nuodb; do
     [ -f "$ZSHRC/$rc" ] && . "$ZSHRC/$rc"
 done
 

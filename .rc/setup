@@ -1,0 +1,53 @@
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+ulimit -c unlimited
+
+export HOME_BIN=$HOME/bin
+export LOCAL=/usr/local
+
+# rtags
+
+export PATH="$HOME/local/rtags/bin:$PATH"
+export PATH="$HOME_BIN:$PATH"
+# This generates compile_commands.json, needed by rtags.
+export CMAKE_EXTRA='-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+# Why can't rdm suddenly detect those std headers?!
+alias rdm="rdm -I $LOCAL/Cellar/llvm/8.0.0/include/c++/v1"
+
+# Git
+
+export GIT_EDITOR=vim
+
+# Go
+
+export GOROOT="$HOME_BIN/go"
+export GOPATH="$HOM_BIN"
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# OpenSSL
+
+export PATH="$LOCAL/opt/openssl/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
+
+# clang
+
+export PATH="$LOCAL/opt/llvm/bin:$PATH"
+
+# General shell aliases
+
+alias ls="ls -xFG"
+alias ll="ls -alF"
+alias rm="rm -f"
+alias gzip="gzip --best --verbose"
+alias gunzip="gunzip --verbose"
+alias hosts="cat /etc/hosts | grep -i"
+alias passwds="cat /etc/passwd | grep -i"
+alias h=history
+alias ag="ag --color-path '35' --color-match '1;32' --color-line-number ''"
+
+# Other
+alias mpic++='$LOCAL/bin/mpic++'
+alias mysql=$LOCAL/mysql/bin/mysql
+
+alias python=$LOCAL/bin/python3.7
+alias pip=$LOCAL/bin/pip3.7
