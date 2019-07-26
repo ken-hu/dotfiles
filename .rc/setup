@@ -44,6 +44,8 @@ alias hosts="cat /etc/hosts | grep -i"
 alias passwds="cat /etc/passwd | grep -i"
 alias h=history
 alias ag="ag --color-path '35' --color-match '1;32' --color-line-number ''"
+alias log2uml="~/bin/log2uml/log2uml.py"
+alias log2uml-gtest="~/bin/log2uml-gtest/log2uml.py"
 
 # Other
 alias mpic++='$LOCAL/bin/mpic++'

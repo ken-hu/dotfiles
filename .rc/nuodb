@@ -1,4 +1,6 @@
 # ENV
+export LOGNAME=khu
+export USER=khu
 export WSPACE=$HOME/work
 export NUODB_HOME=$WSPACE/nuodb/dist
 export THIRDPARTY_DIR=$WSPACE/nuo3rdparty
@@ -41,6 +43,8 @@ alias nuoadmin='./dist/etc/nuoadmin'
 alias nuocmd='./dist/bin/nuocmd --client-key dist/var/etc/nuocmd.pem --verify-server dist/var/etc/nuoadmin.cert'
 alias exp3party='export THIRDPARTY_DIR=$WSPACE/nuo3rdparty && echo $THIRDPARTY_DIR'
 alias exp3partyrel='export THIRDPARTY_DIR=$WSPACE/nuo3rdpartyrel && echo $THIRDPARTY_DIR'
+alias log2uml='~/bin/log2uml/log2uml.py'
+alias vpn='sudo openfortivpn -c $WSPACE/vpnconfig &'
 
 __cdhooks_update_env() {
     builtin "$@"
