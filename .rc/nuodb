@@ -21,8 +21,8 @@ export PKG_CONFIG_PATH="/usr/local/Cellar/icu4c/58.2/lib/pkgconfig:$PKG_CONFIG_P
 alias n='cd $WSPACE/nuodb'
 alias n2='cd $WSPACE/nuodb2'
 alias k='nps -k'
-alias bcfg='./build/bld cfg -G "Unix Makefiles" -b Debug'
-alias bcfgr='./build/bld cfg -G "Unix Makefiles" -b RelWithDebInfo'
+alias bcfg='./build/bld cfg -G "Unix Makefiles" -b Debug -DUNITY_BUILD=ON'
+alias bcfgr='./build/bld cfg -G "Unix Makefiles" -b RelWithDebInfo -DUNITY_BUILD=ON'
 alias bc='./build/bld cpp'
 alias bn='./build/bld cpp --target nuodb'
 alias bd='./build/bld cpp --target dist'
@@ -44,7 +44,10 @@ alias nuocmd='./dist/bin/nuocmd --client-key dist/var/etc/nuocmd.pem --verify-se
 alias exp3party='export THIRDPARTY_DIR=$WSPACE/nuo3rdparty && echo $THIRDPARTY_DIR'
 alias exp3partyrel='export THIRDPARTY_DIR=$WSPACE/nuo3rdpartyrel && echo $THIRDPARTY_DIR'
 alias log2uml='~/bin/log2uml/log2uml.py'
-alias vpn='sudo openfortivpn -c $WSPACE/vpnconfig &'
+alias emacs='emacs --user $(whoami)'
+
+alias vpn='sudo sh -c "openfortivpn -c $WSPACE/vpnconfig &> /tmp/vpn.log" &'
+alias kvpn='nps -k vpn'
 
 __cdhooks_update_env() {
     builtin "$@"
