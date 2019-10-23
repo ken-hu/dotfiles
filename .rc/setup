@@ -12,7 +12,7 @@ export PATH="$HOME_BIN:$PATH"
 # This generates compile_commands.json, needed by rtags.
 export CMAKE_EXTRA='-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 # Why can't rdm suddenly detect those std headers?!
-alias rdm="rdm -I $LOCAL/Cellar/llvm/8.0.0/include/c++/v1"
+# alias rdm="rdm -I $LOCAL/Cellar/llvm/8.0.0/include/c++/v1"
 
 # Git
 
@@ -31,7 +31,7 @@ export PATH="$HOME/local/bin:$PATH"
 
 # clang
 
-export PATH="$LOCAL/opt/llvm/bin:$PATH"
+#export PATH="$LOCAL/opt/llvm/bin:$PATH"
 
 # General shell aliases
 
