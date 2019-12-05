@@ -50,6 +50,3 @@ alias log2uml-gtest="~/bin/log2uml-gtest/log2uml.py"
 # Other
 alias mpic++='$LOCAL/bin/mpic++'
 alias mysql=$LOCAL/mysql/bin/mysql
-
-alias python=$LOCAL/bin/python3.7
-alias pip=$LOCAL/bin/pip3.7
