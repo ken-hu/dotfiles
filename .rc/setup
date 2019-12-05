@@ -50,3 +50,8 @@ alias log2uml-gtest="~/bin/log2uml-gtest/log2uml.py"
 # Other
 alias mpic++='$LOCAL/bin/mpic++'
 alias mysql=$LOCAL/mysql/bin/mysql
+
+# tmux
+alias t='tmux attach || tmux new-session'
+alias tl='tmux list-sessions'
+alias tk='tmux kill-server'
