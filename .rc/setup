@@ -29,6 +29,10 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH="$LOCAL/opt/openssl/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 
+
+# helm
+export PATH="/usr/local/opt/helm@2/bin:$PATH"
+
 # clang
 
 #export PATH="$LOCAL/opt/llvm/bin:$PATH"
@@ -43,12 +47,14 @@ alias gunzip="gunzip --verbose"
 alias hosts="cat /etc/hosts | grep -i"
 alias passwds="cat /etc/passwd | grep -i"
 alias h=history
-alias ag="ag --color-path '35' --color-match '1;32' --color-line-number '' -G 'h|py|cpp|java'"
+alias agf="$LOCAL/bin/ag --color-path '35' --color-match '1;32' --color-line-number '' -g "
+alias ag="$LOCAL/bin/ag --color-path '35' --color-match '1;32' --color-line-number ''"
 alias log2uml="~/bin/log2uml/log2uml.py"
 alias log2uml-gtest="~/bin/log2uml-gtest/log2uml.py"
 
 # Other
 alias mpic++='$LOCAL/bin/mpic++'
+#alias mysql=$LOCAL/mysql/bin/mysql
 
 # tmux
 alias t='tmux attach || tmux new-session'
