@@ -25,7 +25,6 @@ Cloud.cbp
 *.dSYM
 *.o
 .idea/*
-cmake-build-debug/*
 
 ### Eclipse ###
 .metadata
@@ -47,3 +46,9 @@ EditLine/*
 
 ### Others ###
 breakpoints
+*.out
+
+### CMake ###
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
