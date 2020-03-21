@@ -47,6 +47,7 @@ EditLine/*
 ### Others ###
 breakpoints
 *.out
+*.lsp-session-v1
 
 ### CMake ###
 cmake-build-*/
