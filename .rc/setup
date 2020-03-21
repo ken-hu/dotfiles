@@ -10,7 +10,7 @@ export LOCAL=/usr/local
 export PATH="$HOME/local/rtags/bin:$PATH"
 export PATH="$HOME_BIN:$PATH"
 # This generates compile_commands.json, needed by rtags.
-export CMAKE_EXTRA='-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+# export CMAKE_EXTRA='-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 # Why can't rdm suddenly detect those std headers?!
 # alias rdm="rdm -I $LOCAL/Cellar/llvm/8.0.0/include/c++/v1"
 
