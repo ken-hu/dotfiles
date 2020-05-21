@@ -18,7 +18,6 @@ Cloud.cbp
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
