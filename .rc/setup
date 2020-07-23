@@ -14,9 +14,18 @@ export PATH="$HOME_BIN:$PATH"
 # Why can't rdm suddenly detect those std headers?!
 # alias rdm="rdm -I $LOCAL/Cellar/llvm/8.0.0/include/c++/v1"
 
+# Ruby on Rails
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
+
 # Git
 
 export GIT_EDITOR=vim
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gc='git ci'
+alias gs='git stash'
+alias gsp='git stash pop'
 
 # Go
 
@@ -62,3 +71,4 @@ alias tl='tmux list-sessions'
 alias tk='tmux kill-server'
 #alias python=$LOCAL/bin/python3.7
 #alias pip=$LOCAL/bin/pip3.7
+
