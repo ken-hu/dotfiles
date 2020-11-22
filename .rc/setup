@@ -48,8 +48,10 @@ export PATH="/usr/local/opt/helm@2/bin:$PATH"
 
 # General shell aliases
 
-alias ls="ls -xFG"
-alias ll="ls -alF"
+#alias ls="ls -xFG"
+#alias ll="ls -alF"
+alias ls="colorls"
+alias ll="colorls -la"
 alias rm="rm -f"
 alias gzip="gzip --best --verbose"
 alias gunzip="gunzip --verbose"

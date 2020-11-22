@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Load plugins
-plugins=(git autojump zsh-completions zsh-autosuggestions)
+plugins=(git autojump zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 ZSHRC=$HOME/.rc
